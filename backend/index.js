@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import connectToDB from './lib/db.js';
 import resumeRoute from './routes/resume.route.js'
 import cors from 'cors'; 
+import path from 'path'
 
 dotenv.config(); 
 const app = express(); 
@@ -16,9 +17,13 @@ app.use(cors({
     origin:"http://localhost:5173",
     credentials:true
 }))
-app.get("/",(req,res)=>{
-    res.send("hello")
-}); 
+
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname,"../frontend/dist"))); 
+    app.get("*",(req,res)=>{
+        res.sendFile(path.join(__dirname,"../frontend","dist","index.html")); 
+    })
+}
 
 app.use('/api',authRoute); 
 app.use('/api',resumeRoute);
