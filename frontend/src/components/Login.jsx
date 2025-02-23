@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { authStore } from '../store/auth.store';
 import { motion } from 'framer-motion';
+import {Link} from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState(""); 
@@ -48,7 +49,12 @@ const Login = () => {
         >
           Login
         </motion.button>
+        <Link to={"/signup"}>
+        don't have account
+      <p className=' text-blue-500'>signup</p>
+      </Link>
       </motion.form>
+     
     </div>
   );
 };

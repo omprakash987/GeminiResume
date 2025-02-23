@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { authStore } from '../store/auth.store';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
   const [email, setEmail] = useState(""); 
@@ -56,6 +57,10 @@ const Signup = () => {
         >
           Submit
         </motion.button>
+        <Link to={"/login"}>
+        already have account
+        <p className=' text-blue-500'>login</p>
+        </Link>
       </motion.form>
     </div>
   );
