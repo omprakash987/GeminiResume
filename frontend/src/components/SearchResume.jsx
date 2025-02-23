@@ -43,19 +43,16 @@ const SearchResume = () => {
 
       {resume && (
         <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-2xl space-y-4">
-          {/* Header Section */}
           <div className="text-center border-b pb-4">
             <h3 className="text-3xl font-bold text-gray-700">{resume.name}</h3>
             <p className="text-gray-500">{resume.email}</p>
           </div>
 
-          {/* Summary Section */}
           <div>
             <h4 className="text-xl font-semibold text-gray-800 border-b pb-2">Summary</h4>
             <p className="text-gray-600 mt-2">{resume.summary}</p>
           </div>
 
-          {/* Education Section */}
           <div>
             <h4 className="text-xl font-semibold text-gray-800 border-b pb-2">Education</h4>
             <p className="text-gray-700 mt-2">
@@ -63,7 +60,6 @@ const SearchResume = () => {
             </p>
           </div>
 
-          {/* Experience Section */}
           <div>
             <h4 className="text-xl font-semibold text-gray-800 border-b pb-2">Experience</h4>
             <p className="text-gray-700 mt-2">
@@ -71,7 +67,6 @@ const SearchResume = () => {
             </p>
           </div>
 
-          {/* Skills Section */}
           <div>
             <h4 className="text-xl font-semibold text-gray-800 border-b pb-2">Skills</h4>
             <div className="flex flex-wrap gap-2 mt-3">

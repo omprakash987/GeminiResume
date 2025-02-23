@@ -1,4 +1,3 @@
-// pdfReader.js
 import PDFParser from "pdf2json";
 
 export function extractTextFromPdf(pdfBuffer) {
@@ -16,7 +15,6 @@ export function extractTextFromPdf(pdfBuffer) {
   
       pdfData.Pages.forEach((page) => {
         page.Texts.forEach((textItem) => {
-          // Each textItem has an array of items in 'R'
           textItem.R.forEach((t) => {
             extractedText += decodeURIComponent(t.T) + " ";
           });

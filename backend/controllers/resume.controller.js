@@ -56,7 +56,6 @@ console.log("result : ", result);
 const candidate =  result.response.candidates[0];
 console.log("Candidate parts:", candidate.content.parts);
 
-// Extract text by mapping over parts, assuming each part has a 'text' property.
 const candidateText = candidate.content.parts.map(part => part.text).join(' ');
 
 console.log("candidate text : ", candidateText); 
@@ -90,7 +89,6 @@ if (parsedData.experience) {
     parsedData.experience.start_date = new Date(parsedData.experience.start_date);
   }
   if (parsedData.experience.end_date) {
-    // If the end_date is the string "current", set it to null.
     if (
       typeof parsedData.experience.end_date === "string" &&
       parsedData.experience.end_date.toLowerCase() === "current"
