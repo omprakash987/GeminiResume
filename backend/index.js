@@ -28,7 +28,7 @@ if(process.env.NODE_ENV === "production"){
 
 app.use('/api',authRoute); 
 app.use('/api',resumeRoute);
-app.listen(8000,()=>{
+app.listen(PORT,()=>{
     console.log(`server started at port ${PORT}`)
     connectToDB(); 
 })
